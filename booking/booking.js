@@ -70,3 +70,24 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+function openPopup(itemId) {
+    var popup = document.getElementById("popup-" + itemId);
+    popup.classList.add("active");
+  }
+  
+  function closePopup(itemId) {
+    var popup = document.getElementById("popup-" + itemId);
+    popup.classList.remove("active");
+  }
+  
+  function buttonClicked(event) {
+    event.stopPropagation(); // Prevents click event from bubbling up
+    var itemId = event.target.closest(".item-container").getAttribute("data-item-id");
+    openPopup(itemId);
+  }
+  
+  
+  
+
+

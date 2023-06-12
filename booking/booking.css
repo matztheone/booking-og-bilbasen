@@ -1,13 +1,21 @@
-/* Style the form */
+body {
+  background: #efefef;
+  line-height: 1.4;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* SELECTERTAB */
 #regForm {
   background-color: #ffffff;
-  margin: 100px auto;
   padding: 40px;
   width: 70%;
   min-width: 300px;
 }
 
-/* Style the input fields */
 input {
   padding: 10px;
   width: 100%;
@@ -47,8 +55,10 @@ input.invalid {
 .step.finish {
   background-color: #04AA6D;
 }
+
 .container {
   display: flex;
+  margin: 0;
 }
 
 .left-column {
@@ -59,34 +69,160 @@ input.invalid {
   flex: 2;
 }
 
-.auto-grid li {
-  padding: 4rem 1rem;
-  text-align: center;
-  font-size: 1.2rem;
-  background: #eb4d4b;
-  color: #ffffff;
-}
-
 .auto-grid {
-  --auto-grid-min-size: 16rem;
-  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  list-style: none; /* Add this line to remove the default marker */
+  grid-gap: 10px;
 }
 
-body {
-  background: #efefef;
-  padding: 1rem;
-  line-height: 1.4;
-  font-family: sans-serif;
+.item-container {
+  background-color: #ff5f5f;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+
+  height: 100%; /* Ensure each item occupies the full height */
+  box-sizing: border-box; /* Include padding and border within the item's dimensions */
+  margin: 0 auto; /* Center the grid horizontally */
+}
+
+.item-container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-container:hover {
+  background-color: #ff0000;
+  transition: background-color 0.4s ease;
+  cursor: pointer;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 
-@media screen and (max-width: 600px) {
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* PLANLÆGNINGSTAB */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  height: 50px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  /* SELECTERTAB */
+  .container {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1;
+  }
+
+  .item-container {
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
   .auto-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+
+  /* PLANLÆGNINGSTAB */
+  .grid-container {
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .button:hover {
+    background-color: #45a049;
   }
 }
+
 
