@@ -81,11 +81,20 @@ function openPopup(itemId) {
     popup.classList.remove("active");
   }
   
-  function buttonClicked(event) {
-    event.stopPropagation(); // Prevents click event from bubbling up
+  function checkboxClicked(event) {
+    event.stopPropagation();
     var itemId = event.target.closest(".item-container").getAttribute("data-item-id");
-    openPopup(itemId);
+    var checkboxValue = event.target.checked;
+    console.log("Checkbox value: " + checkboxValue);
+    
+    if (!checkboxValue) {
+      openPopup(itemId);
+    }
   }
+  
+  
+
+  
   
   
   
