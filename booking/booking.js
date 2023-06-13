@@ -91,6 +91,19 @@ function openPopup(itemId) {
       openPopup(itemId);
     }
   }
+
+
+  document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    // You can handle form data here, for example, by sending it to a server using AJAX
+    var formData = new FormData(this);
+    var data = {};
+    for (var pair of formData.entries()) {
+      data[pair[0]] = pair[1];
+    }
+    console.log(data);
+  });
+  
   
   
 
