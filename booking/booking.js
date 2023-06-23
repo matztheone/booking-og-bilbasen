@@ -12,9 +12,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Fuldfør";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Næste";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -71,6 +71,23 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
+const cards = document.querySelectorAll('.card');
+
+cards.forEach((card) => {
+  card.addEventListener('click', function() {
+    if (!card.classList.contains('active')) {
+      // Remove active class from all cards
+      cards.forEach((c) => c.classList.remove('active'));
+      
+      // Add active class to the clicked card
+      card.classList.add('active');
+      
+      // Perform actions or register the toggle event in JavaScript for the active card
+    }
+  });
+});
+
+
 function openPopup(itemId) {
     var popup = document.getElementById("popup-" + itemId);
     popup.classList.add("active");
@@ -86,13 +103,13 @@ function openPopup(itemId) {
     var itemId = event.target.closest(".item-container").getAttribute("data-item-id");
     var checkboxValue = event.target.checked;
     console.log("Checkbox value: " + checkboxValue);
+
     
     if (!checkboxValue) {
       openPopup(itemId);
     }
   }
-
-
+  
   document.getElementById("bookingForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
     // You can handle form data here, for example, by sending it to a server using AJAX

@@ -63,6 +63,7 @@ input.invalid {
 
 .left-column {
   flex: 1;
+  font-size: 18px;
 }
 
 .right-column {
@@ -71,22 +72,38 @@ input.invalid {
 
 .auto-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 10px;
 }
+
 
 .item-container {
   background: #ededed;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
   color: #090909;
   padding: 20px;
   text-align: center;
   border-radius: 3px;
 
-  height: 100%; /* Ensure each item occupies the full height */
-  box-sizing: border-box; /* Include padding and border within the item's dimensions */
-  margin: 0 auto; /* Center the grid horizontally */
+  height: 100%;
+  box-sizing: border-box; 
+  margin: 0 auto; 
+}
+.item-container h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #090909;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.item-container p{
+  margin: 0;
+  font-size: 18px;
+  color: #090909;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .item-container .content {
@@ -99,19 +116,23 @@ input.invalid {
   background: #e0e0e0;
   transform: scale(1.025);
 }
-
-.checkbox-container {
-  display: inline-block;
-  position: relative;
-  padding-left: 35px;
-  margin-top: 10px;
-  cursor: pointer;
+.item-container:active{
+  transform: scale(0.99);
 }
 
-.checkbox-container input {
-  position: absolute;
+.checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.checkbox input {
   opacity: 0;
   cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkmark {
@@ -120,15 +141,16 @@ input.invalid {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
-  border: 1px solid #ccc;
+  margin-left: 30px;
+  background-color: #fff;
+  border-radius: 3px;
 }
 
-.checkbox-container:hover input ~ .checkmark {
+.checkbox:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-.checkbox-container input:checked ~ .checkmark {
+.checkbox input:checked ~ .checkmark {
   background-color: #2196F3;
 }
 
@@ -138,18 +160,42 @@ input.invalid {
   display: none;
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
-.checkbox-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 7px;
+  height: 14px;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+.card {
+  background: #ededed;
+  cursor: pointer;
+  transition: all 0.1s;
+  color: #090909;
+  padding: 20px;
+  text-align: center;
+  border-radius: 3px;
+  width: 18rem;
+  height: 8rem;
+  box-sizing: border-box; 
+  margin: 0 auto; 
+}
+
+.card:hover{
+  background: #e0e0e0;
+  transform: scale(1.025);
+  transition: all 0.1s;
+}
+.card.active{
+  background-color: #fff;
+  transform: scale(0.98);
 }
 
 
@@ -220,20 +266,34 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
-  width: 200px;
+  width: 20rem;
+}
+
+.nextprevbtn {
+  padding: 10px;
+  background-color: #dbdbdb;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  height: 40px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.nextprevbtn:hover {
+  background-color: #b1b1b1;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.nextprevbtn:active {
+  transform: scale(0.95);
 }
 
 
-
-
-
-
-
-
-
-
-
-@media (max-width: 600px) {
+@media (max-width: 1300px) {
   /* SELECTERTAB */
   .container {
     flex-direction: column;
@@ -256,10 +316,37 @@ input[type="tel"] {
   /* PLANLÆGNINGSTAB */
   .grid-container {
     flex-direction: column;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(2fr, 1fr));
   }
-  .button:hover {
-    background-color: #45a049;
+}
+
+
+@media (max-width: 600px) {
+  /* SELECTERTAB */
+  .container {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1;
+  }
+
+  .item-container {
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .auto-grid {
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 }
 

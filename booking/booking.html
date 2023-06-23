@@ -7,12 +7,12 @@
 <body>
     <form id="regForm" action="">
 
-        <h1>Register:</h1>
+        <h1>Vælg opgaver</h1>
 
         <div style="overflow:auto;">
             <div style="float:right;">
-              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              <button class="nextprevbtn" type="button" id="prevBtn" onclick="nextPrev(-1)">Tilbage</button>
+              <button class="nextprevbtn" type="button" id="nextBtn" onclick="nextPrev(1)">Næste</button>
             </div>
           </div>
         
@@ -23,22 +23,28 @@
                 <div class="right-column">
                   <div class="auto-grid">
                     <div>
-                        <div class="item-container" onclick="openPopup(1)">
-                            <h2>Service efter fabrikkens forskrifter</h2>
-                            <div class="content">
-                            <p>Ring for pris</p>
-                            <label>
-                                <input type="checkbox" onclick="checkboxClicked(event)">
-                            </label>
-                            </div>
+                      <div class="item-container" onclick="openPopup(1)">
+                        <h2>Service efter fabrikkens forskrifter</h2>
+                        <div class="content">
+                          <p>Ring for pris</p>
+                          <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                         </div>
+                      </div>                      
                     </div>                                              
                     <div>
                         <div class="item-container" onclick="openPopup(2)">
                             <h2>Hjulskift (med opbevaring)</h2>
                             <div class="content">
                               <p>450,00 DKK</p>
-                              <button onclick="buttonClicked(event)">Button</button>
+                              <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                             </div>
                           </div>
                         </div>
@@ -47,7 +53,11 @@
                             <h2>Hjulskift (medbragte hjul)</h2>
                             <div class="content">
                               <p>450,00 DKK</p>
-                              <button onclick="buttonClicked(event)">Button</button>
+                              <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                             </div>
                           </div>
                         </div>
@@ -56,7 +66,11 @@
                             <h2>Afbalancering af hjul</h2>
                             <div class="content">
                               <p>450,00 DKK</p>
-                              <button onclick="buttonClicked(event)">Button</button>
+                              <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                             </div>
                           </div>
                         </div>
@@ -65,7 +79,11 @@
                             <h2>Hjulopbevaring</h2>
                             <div class="content">
                               <p>450,00 DKK</p>
-                              <button onclick="buttonClicked(event)">Button</button>
+                              <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                             </div>
                           </div>
                         </div>
@@ -74,7 +92,11 @@
                           <h2>Bremseeftersyn</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -83,7 +105,11 @@
                           <h2>4-hjulsudmåling</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -92,7 +118,11 @@
                           <h2>Aircondition service uden kølemiddel</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -101,7 +131,11 @@
                           <h2>Stenslagsreparation</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -110,7 +144,11 @@
                           <h2>Synstjek</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -119,7 +157,11 @@
                           <h2>Helbredstjek/fejlkodeudlæsning</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -128,7 +170,11 @@
                           <h2>Pæreskift</h2>
                           <div class="content">
                             <p>450,00 DKK</p>
-                            <button onclick="buttonClicked(event)">Button</button>
+                            <label class="checkbox">
+                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
+                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
+                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -226,12 +272,18 @@
             <div class="container">
                 <div class="left-column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consectetur in quisquam, suscipit quam, magni laborum sequi laudantium corporis amet sed placeat nulla minima eveniet dolorum! Quia quos, aliquid, iure dicta velit, alias cum animi doloribus impedit ut aperiam blanditiis vero distinctio accusantium voluptates molestiae! Hic odit consectetur cupiditate numquam.</div>
                 <div class="right-column">
-                    <div class="grid-container">
-                        <button class="button">Button 1</button>
-                        <button class="button">Button 2</button>
-                        <button class="button">Button 3</button>
+                  <div class="grid-container">
+                    <div id="card1" class="card">
+                      <div class="cardContent">Jeg kommer selv videre</div>
                     </div>
-                </div>
+                    <div id="card2" class="card">
+                      <div class="cardContent">Jeg ønsker at vente på værkstedet</div>
+                    </div>
+                    <div id="card3" class="card">
+                      <div class="cardContent">Jeg ønsker en lånebil</div>
+                    </div>
+                  </div>
+                </div>                
             </div> 
         </div>
         
