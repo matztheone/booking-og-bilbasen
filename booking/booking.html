@@ -3,6 +3,9 @@
 <head>
     <title>Booking</title>
     <link rel="stylesheet" type="text/css" href="booking.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
     <form id="regForm" action="">
@@ -287,9 +290,21 @@
             </div> 
         </div>
         
-        <div class="tab">Birthday:
+        <div class="tab">
             <div id="showcase-wrapper">
-                <div id="myCalendarWrapper"></div>
+                <div id="myCalendarWrapper">
+                  <div class="form-group">
+                    <div>
+                      <label for="selectedDate">Vælg dato:</label>
+                      <input type="text" id="selectedDate" name="selectedDate" required>
+                    </div>
+                    <div>
+                      <label for="selectedDate">Vælg tid:</label>
+                      <input type="text" id="selectedTime" name="selectedTime" required>
+                    </div>
+                  </div>
+                  
+                </div>
             </div>
         </div>
         
@@ -340,5 +355,7 @@
     </form>
 
     <script src="booking.js"></script>
+    <script src="kalender.js"></script>
+
 </body>
 </html>
