@@ -121,6 +121,19 @@ function openPopup(itemId) {
     console.log(data);
   });
   
+  function changeButton() {
+    var button = document.getElementById("myButton");
+    button.classList.toggle("clicked");
+    
+    var text = document.querySelector("#myButton .text");
+    if (text.textContent === "Vælg") {
+      text.textContent = "Fravælg";
+    } else {
+      text.textContent = "Vælg";
+    }
+  }
+  
+  
   
   
 

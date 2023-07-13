@@ -26,15 +26,18 @@
                 <div class="right-column">
                   <div class="auto-grid">
                     <div>
-                      <div class="item-container" onclick="openPopup(1)">
+                      <div class="item-container" onclick="checkboxClicked(event) ">
                         <h2>Service efter fabrikkens forskrifter</h2>
                         <div class="content">
                           <p>Ring for pris</p>
-                          <label class="checkbox">
-                            <input type="checkbox" id="option" onclick="checkboxClicked(event)">
-                            <span for="option" onclick="checkboxClicked(event)">Vælg</span>
-                            <span class="checkmark" onclick="checkboxClicked(event)"></span>
-                          </label>
+                          <button id="myButton" onclick="changeButton()">
+                            <span class="text">Vælg</span>
+                            <span class="icon">
+                              <svg fill="#FFFFFF" width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 7.455L7.455 7.455 7.455 0 8.545 0 8.545 7.455 16 7.455 16 8.545 8.545 8.545 8.545 16 7.455 16 7.455 8.545 0 8.545z" stroke="#FFFFFF" stroke-width="1.5px"/>
+                              </svg>                          
+                            </span>
+                          </button>                                                                          
                         </div>
                       </div>                      
                     </div>                                              
