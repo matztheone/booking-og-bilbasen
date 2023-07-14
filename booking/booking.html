@@ -12,17 +12,33 @@
 
         <h1>Vælg opgaver</h1>
 
+        <!-- Circles which indicate the steps of the form: -->
+        <div class="steps">
+          <div class="step">
+            <span>First Step</span>
+          </div>
+          <div class="step">
+            <span>Second Step</span>
+          </div>
+          <div class="step">
+            <span>Third Step</span>
+          </div>
+          <div class="step">
+            <span>Final Step</span>
+          </div>
+        </div>
+        
         <div style="overflow:auto;">
             <div style="float:right;">
               <button class="nextprevbtn" type="button" id="prevBtn" onclick="nextPrev(-1)">Tilbage</button>
               <button class="nextprevbtn" type="button" id="nextBtn" onclick="nextPrev(1)">Næste</button>
             </div>
-          </div>
+        </div>
         
         <!-- One "tab" for each step in the form: -->
         <div class="tab">
             <div class="container">
-                <div class="left-column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consectetur in quisquam, suscipit quam, magni laborum sequi laudantium corporis amet sed placeat nulla minima eveniet dolorum! Quia quos, aliquid, iure dicta velit, alias cum animi doloribus impedit ut aperiam blanditiis vero distinctio accusantium voluptates molestiae! Hic odit consectetur cupiditate numquam.</div>
+                <div class="left-column"></div>
                 <div class="right-column">
                   <div class="auto-grid">
                     <div>
@@ -42,18 +58,25 @@
                       </div>                      
                     </div>                                              
                     <div>
-                        <div class="item-container" onclick="openPopup(2)">
-                            <h2>Hjulskift (med opbevaring)</h2>
-                            <div class="content">
-                              <p>450,00 DKK</p>
-                              <label class="checkbox">
+                      <div class="item-container">
+                        <h2>
+                          <svg class="popup-icon" width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Warning / Info">
+                              <path id="Vector" d="M12 11V16M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21ZM12.0498 8V8.1L11.9502 8.1002V8H12.0498Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                          </svg>
+                          Hjulskift (med opbevaring)
+                        </h2>
+                        <div class="content">
+                          <p>450,00 DKK</p>
+                          <label class="checkbox">
                             <input type="checkbox" id="option" onclick="checkboxClicked(event)">
                             <span for="option" onclick="checkboxClicked(event)">Vælg</span>
                             <span class="checkmark" onclick="checkboxClicked(event)"></span>
                           </label>
-                            </div>
-                          </div>
                         </div>
+                      </div>                      
+                    </div>                   
                     <div>
                         <div class="item-container" onclick="openPopup(3)">
                             <h2>Hjulskift (medbragte hjul)</h2>
@@ -292,23 +315,49 @@
                 </div>                
             </div> 
         </div>
-        
+        <!-- Calendar -->
         <div class="tab">
-            <div id="showcase-wrapper">
-                <div id="myCalendarWrapper">
-                  <div class="form-group">
-                    <div>
-                      <label for="selectedDate">Vælg dato:</label>
-                      <input type="text" id="selectedDate" name="selectedDate" required>
-                    </div>
-                    <div>
-                      <label for="selectedDate">Vælg tid:</label>
-                      <input type="text" id="selectedTime" name="selectedTime" required>
-                    </div>
-                  </div>
-                  
-                </div>
+          <div id="container">
+            <div id="header">
+              <div id="monthDisplay"></div>
+              <div>
+                <button id="backButton">Back</button>
+                <button id="nextButton">Next</button>
+              </div>
             </div>
+      
+            <div id="weekdays">
+              <div>Sunday</div>
+              <div>Monday</div>
+              <div>Tuesday</div>
+              <div>Wednesday</div>
+              <div>Thursday</div>
+              <div>Friday</div>
+              <div>Saturday</div>
+            </div>
+      
+            <div id="calendar"></div>
+          </div>
+      
+          <div id="newEventModal">
+            <h2>New Event</h2>
+      
+            <input id="eventTitleInput" placeholder="Event Title" />
+      
+            <button id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+          </div>
+      
+          <div id="deleteEventModal">
+            <h2>Event</h2>
+      
+            <p id="eventText"></p>
+      
+            <button id="deleteButton">Delete</button>
+            <button id="closeButton">Close</button>
+          </div>
+      
+          <div id="modalBackDrop"></div>
         </div>
         
         <div class="tab">Login Info:
@@ -344,17 +393,6 @@
                 </div>
             </div>
         </div>
-        
-
-        
-        <!-- Circles which indicate the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-        </div>
-        
     </form>
 
     <script src="booking.js"></script>
